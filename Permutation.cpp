@@ -1,5 +1,6 @@
 #include <cstdlib>
 #include <iostream>
+#include <ostream>
 
 using namespace std;
 class Permutation
@@ -17,6 +18,7 @@ class Permutation
         Permutation (char*newPermutationString);
         Permutation ( char*newIndices, long newN);
         ~Permutation();
+        void show();
         void codeToIndices();
         void indicesToCode();
         void stringToIndices();
@@ -93,6 +95,12 @@ char*indices=new char[len+1];
 strncpy(indices,newIndices,len);
 indices[len]=0;    
 }
+
+void Permutation::show()
+{
+cout <<((long) getPermutationCode());
+}
+
 int main(int argc, char *argv[])
 { Permutation b1;
   Permutation b2(55);
