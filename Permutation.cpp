@@ -93,6 +93,9 @@ Indices=new char[len+1];
 strncpy(Indices,newIndices,len);
 Indices[len]=0;    
 }
+int main(int argc, char *argv[])
+{
+
  system("PAUSE");
   return EXIT_SUCCESS;
 }
