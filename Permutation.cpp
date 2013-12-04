@@ -22,7 +22,8 @@ class Permutation
         void stringToIndices();
         long getPermutationCode();
         void setPermutationCode(long newCode);
-        char * getPermutationString (char*newPermutationString);
+        char * getPermutationString ();
+        void setPermutationString(char*newPermutationString);
         char * getIndices();
         void setIndices (char* newIndices);
 };
@@ -53,13 +54,13 @@ Permutation::~Permutation()
 
 long Permutation::getPermutationCode()
 {
-     return PermutationCode();
+     return PermutationCode;
      }
      void Permutation::setPermutationCode(long newPermutationCode)
      {
      PermutationCode=newPermutationCode;
      }
-char*Permutation::getPermutationString();
+char*Permutation::getPermutationString()
 {
 char*copyPermutationString;
 int len=strlen(PermutationString);
@@ -68,30 +69,29 @@ strncpy(copyPermutationString,PermutationString,len);
 copyPermutationString[len]=0;
 return copyPermutationString;
 }
-void Permutation::setPermutationStrig(char* newPermutationStrig)
+void Permutation::setPermutationString(char* newPermutationString)
 {
 if(PermutationString) delete[]PermutationString;
-int len=strlen(newPermutationString);
-PermutationString=new char[len+1];
-strncpy(PermutationString,newPermutationString,len);
-PermutationString[len]=0;    
+char PermutationString[100];
+strncpy(PermutationString,newPermutationString,100);
+PermutationString[100]=0;    
 }
-char * getIndices();
+char * Permutation::getIndices()
 {
 char*copyIndices;
-int len=strlen(Indices);
+int len=strlen(indices);
 copyIndices=new char[len+1];
-strncpy(copyIndices,Indices,len);
+strncpy(copyIndices,indices,len);
 copyIndices[len]=0;
 return copyIndices;
 }
-void setIndices (char* newIndices);
+void Permutation::setIndices (char* newIndices)
 {
-if(Indices) delete[]Indices;
+if(indices) delete[]indices;
 int len=strlen(newIndices);
-Indices=new char[len+1];
-strncpy(Indices,newIndices,len);
-Indices[len]=0;    
+char*indices=new char[len+1];
+strncpy(indices,newIndices,len);
+indices[len]=0;    
 }
 int main(int argc, char *argv[])
 {
