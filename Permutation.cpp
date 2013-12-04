@@ -94,8 +94,10 @@ strncpy(indices,newIndices,len);
 indices[len]=0;    
 }
 int main(int argc, char *argv[])
-{
-
+{ Permutation b1;
+  Permutation b2(55);
+  Permutation b3=b2;
+   b2.show(); 
  system("PAUSE");
   return EXIT_SUCCESS;
 }
